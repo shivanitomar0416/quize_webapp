@@ -1,32 +1,34 @@
 import 'package:flutter/material.dart';
+import 'package:quize_webapp/presentation/page/login.dart'; // Ensure this import is correct
 
 class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Home Screen'),
+        title: const Text('Home Screen'),
       ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Text(
-              'Welcome to the Home Screen!',
-              style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+      body: Stack(
+        children: [
+          SizedBox.expand(
+            child: FittedBox(
+              fit: BoxFit.cover, // Ensures the image covers the entire screen
+              child: Image.asset('assets/images/home_screen.jpg'),
             ),
-            SizedBox(height: 20),
-            ElevatedButton(
+          ),
+          Center(
+            child: ElevatedButton(
               onPressed: () {
-                // You can add action when the button is pressed
-                ScaffoldMessenger.of(context).showSnackBar(
-                  SnackBar(content: Text('Button pressed!')),
+                // Use Navigator.push to navigate to the ParticipationScreen
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => LoginScreen()), 
                 );
               },
-              child: Text('Press Me'),
+              child: const Text('Login to the quiz'),
             ),
-          ],
-        ),
+          ),
+        ],
       ),
     );
   }
