@@ -5,6 +5,10 @@ class LoginScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+       appBar: AppBar(
+        title: const Text('Login screen'),
+      ),
+     
       body: Row(
         children: [
           Expanded(
@@ -23,7 +27,7 @@ class LoginScreen extends StatelessWidget {
                     style:
                         TextStyle(fontSize: 14, fontWeight: FontWeight.normal),
                   ),
-                  SizedBox(height: 20),
+                  SizedBox(height: 15),
                   Text(
                     'Participant Name',
                     style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
@@ -34,7 +38,7 @@ class LoginScreen extends StatelessWidget {
                       border: OutlineInputBorder(),
                     ),
                   ),
-                  SizedBox(height: 20),
+                  SizedBox(height: 15),
                   Text(
                     'Team Name',
                     style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
@@ -45,7 +49,7 @@ class LoginScreen extends StatelessWidget {
                       border: OutlineInputBorder(),
                     ),
                   ),
-                  SizedBox(height: 20),
+                  SizedBox(height: 15),
                   Text(
                     'Test Code',
                     style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
@@ -56,13 +60,14 @@ class LoginScreen extends StatelessWidget {
                       border: OutlineInputBorder(),
                     ),
                   ),
-                  SizedBox(height: 20),
+                  SizedBox(height: 15),
                   ElevatedButton(
                     onPressed: () {
                       Navigator.push(
                         context,
                         MaterialPageRoute(
-                            builder: (context) => ParticipationScreen()),
+                            builder: (context) => ParticipationScreen()
+                            ),
                       );
                     },
                     child: Text('Login'),

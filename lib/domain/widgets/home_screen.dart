@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:quize_webapp/presentation/page/login.dart'; // Ensure this import is correct
-
+import 'package:quize_webapp/presentation/page/login.dart'; 
 class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -12,14 +11,13 @@ class HomeScreen extends StatelessWidget {
         children: [
           SizedBox.expand(
             child: FittedBox(
-              fit: BoxFit.cover, // Ensures the image covers the entire screen
+              fit: BoxFit.cover, 
               child: Image.asset('assets/images/home_screen.jpg'),
             ),
           ),
           Center(
             child: ElevatedButton(
               onPressed: () {
-                // Use Navigator.push to navigate to the ParticipationScreen
                 Navigator.push(
                   context,
                   MaterialPageRoute(builder: (context) => LoginScreen()), 
